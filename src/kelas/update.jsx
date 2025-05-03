@@ -1,23 +1,23 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import api from "../../api";
+import api from "api";
 
 
-export default function editMapel() {
-    const [nama_mapel, setNama] = useState('');
-    const [guru_pengampu, setGuru] = useState('');
+export default function editKelas() {
+    const [nama_kelas, setNama] = useState('');
+    const [wali_kelas, setWali] = useState('');
     const [errors, setErrors] = useState('');
     const navigate = useNavigate();
     const { id } = useParams();
 
     const fetchDetailPost = async () => {
         try {
-            const response = await api.get(`/mapel/${id}`);
-            const mapel = response.data;
-            setNama(mapel.nama_mapel);
-            setGuru(mapel.guru_pengampu);
+            const response = await api.get(`/kelas/${id}`);
+            const kelas = response.data;
+            setNama(kelas.nama_kelas);
+            setWali(kelas.wali_kelas);
         } catch (error) {
-            console.error("Error fetching mapel details: ", error)
+            console.error("Error fetching kelas details: ", error)
         }
     };
 
@@ -29,12 +29,12 @@ export default function editMapel() {
         e.preventDefault();
 
         const formData = {
-            nama_mapel, guru_pengampu
+            nama_kelas, wali_kelas
         };
 
         try {
-            await api.put(`/mapel/${id}`, formData);
-            navigate('/mapel');
+            await api.put(`/kelas/${id}`, formData);
+            navigate('/kelas');
         } catch (error) {
             if (error.response && error.response.data) {
                 setErrors(error.response.data.errors)
@@ -52,23 +52,23 @@ export default function editMapel() {
                         <div className="card-body">
                             <form action="" onSubmit={updatePost}>
                                 <div className="mb-3">
-                                    <label htmlFor="nama" className="form-label">Nama Mapel</label>
+                                    <label htmlFor="nama" className="form-label">Nama</label>
                                     <input
                                         type="text"
                                         className="form-control"
-                                        value={nama_mapel}
+                                        value={nama_kelas}
                                         onChange={(e) => setNama(e.target.value)} />
-                                    {errors.nama_mapel && <div className="alert alert-danger">{errors.nama_mapel}</div>}
+                                    {errors.nama_kelas && <div className="alert alert-danger">{errors.nama_kelas}</div>}
                                 </div>
 
                                 <div className="mb-3">
-                                    <label htmlFor="wali" className="form-label">Guru Pengampu</label>
+                                    <label htmlFor="wali" className="form-label">Wali</label>
                                     <input
                                         type="text"
                                         className="form-control"
-                                        value={guru_pengampu}
-                                        onChange={(e) => setGuru(e.target.value)} />
-                                    {errors.guru_pengampu && <div className="alert alert-danger">{errors.guru_pengampu}</div>}
+                                        value={wali_kelas}
+                                        onChange={(e) => setWali(e.target.value)} />
+                                    {errors.wali_kelas && <div className="alert alert-danger">{errors.wali_kelas}</div>}
                                 </div>
 
                                 <div className="mb-3 d-flex gap-3">
@@ -76,7 +76,7 @@ export default function editMapel() {
                                     <button
                                         type="button"
                                         className="btn btn-secondary"
-                                        onClick={() => navigate('/mapel')}
+                                        onClick={() => navigate('/kelas')}
                                     >
                                         Back
                                     </button>

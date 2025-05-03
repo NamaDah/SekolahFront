@@ -1,20 +1,20 @@
 import { Route, Routes } from "react-router-dom";
-import Home from "../views/home";
-import SiswaIndex from "../views/siswa/index.jsx";
-import SiswaAdd from "../views/siswa/add.jsx";
-import SiswaEdit from "../views/siswa/update.jsx";
+import Home from "../home";
+import SiswaIndex from "../siswa/index.jsx";
+import SiswaAdd from "../siswa/add.jsx";
+import SiswaEdit from "../siswa/update.jsx";
 
-import KelasIndex from "../views/kelas/index.jsx";
-import KelasAdd from "../views/kelas/add.jsx";
-import KelasEdit from "../views/kelas/update.jsx";
+import KelasIndex from "../kelas/index.jsx";
+import KelasAdd from "../kelas/add.jsx";
+import KelasEdit from "../kelas/update.jsx";
 
-import MapelIndex from "../views/mapel/index.jsx";
-import MapelAdd from "../views/mapel/add.jsx";
-import MapelEdit from "../views/mapel/update.jsx";
+import MapelIndex from "../mapel/index.jsx";
+import MapelAdd from "../mapel/add.jsx";
+import MapelEdit from "../mapel/update.jsx";
 
-import JadwalIndex from "../views/jadwal/index.jsx";
-import JadwalAdd from "../views/jadwal/add.jsx";
-import JadwalEdit from "../views/jadwal/update.jsx";
+import JadwalIndex from "../jadwal/index.jsx";
+import JadwalAdd from "../jadwal/add.jsx";
+import JadwalEdit from "../jadwal/update.jsx";
 
 export default function RouteIndex() {
     return(

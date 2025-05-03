@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import api from "../../api";
+import api from "api";
 
 export default function JadwalEdit() {
     const [kelas1, setKelas1] = useState([]);

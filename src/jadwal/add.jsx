@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import api from "../../api";
+import api from "../api";
 
 export default function AddJadwal() {
     const [kelas1, setKelas1] = useState([]);
