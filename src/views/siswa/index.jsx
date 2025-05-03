@@ -61,8 +61,8 @@ export default function SiswaIndex() {
                                             <td>{ Siswa.kode }</td>
                                             <td>{ Siswa.nama }</td>
                                             <td>{ Siswa.kelas.nama_kelas }</td>
-                                            <td>{ Siswa.deskripsi }</td>
                                             <td>{ Siswa.alamat }</td>
+                                            <td>{ Siswa.deskripsi }</td>
                                             <td className="text-center">
                                                 <Link to={`/siswas/edit/${Siswa.id}`} className="btn btn-sm btn-primary rounded-sm shadow border-0 me-2">Edit</Link>
                                                 <button onClick={() => deleteSiswa(Siswa.id)} className="btn btn-sm btn-danger rounded-sm shadow border-0">Delete</button>
